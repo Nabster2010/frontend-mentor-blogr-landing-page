@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              lightRed: "hsl(356, 100%, 66%)",
+              veryLightRed: "hsl(355, 100%, 74%)",
+              veryDarkDesaturatedBlue: "hsl(208, 49%, 24%)",
+              white: "hsl(0, 0%, 100%)",
+              grayishBlue: "hsl(240, 2%, 79%)",
+              veryDarkGrayishBlue: "hsl(207, 13%, 34%)",
+              veryDarkBlue: "hsl(240, 10%, 16%)",
+              //gradient mobile
+              bgFrom: "hsl(13, 100%, 72%)",
+              bgTo: "hsl(353, 100%, 62%)",
+              // gradient body
+              gradientFrom: "hsl(237, 17%, 21%)",
+              gradientTo: " hsl(237, 23%, 32%)",
+            },
+
+            fontFamily: {
+              ubuntu: ["Ubuntu", "sans-serif"],
+              overpass: ["Overpass", "sans-serif"],
+            },
+            backgroundImage: {
+              heroMobile: "url('./images/bg-pattern-intro-mobile.svg')",
+              heroDesktop: "url('./images/bg-pattern-intro-desktop.svg')",
+            },
+            screens: {
+              xs: "320px",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <script src="script.js" defer></script>
+    <title>Frontend Mentor | [Blogr]</title>
+  </head>
+  <body class="font-overpass overflow-x-hidden">
+    <header class="header-bg text-white py-8">
+      <div class="relative">
+        <!-- nav start -->
+        <nav
+          class="font-ubuntu flex justify-between md:justify-start items-center px-4"
+        >
+          <div class="mr-4"><img src="./images/logo.svg" alt="" /></div>
+          <button class="menu-btn md:hidden">
+            <img src="./images/icon-hamburger.svg" class="" alt="" />
+            <img src="./images/icon-close.svg" class="hidden" alt="" />
+          </button>
+          <div
+            class="nav-menu md:flex-1 md:static md:flex justify-between items-stretch shadow-2xl md:shadow-none absolute z-10 top-16 left-4 right-4 bg-white md:bg-transparent hidden rounded-md"
+          >
+            <ul
+              class="flex px-8 flex-col md:flex-row justify-center items-center gap-6 py-8 md:py-0"
+            >
+              <li class="flex justify-center items-center gap-2">
+                <a
+                  href="#"
+                  class="text-lg hover:text-veryDarkGrayishBlue text-veryDarkDesaturatedBlue md:text-white/80 md:hover:text-white/100 md:hover:underline font-semibold"
+                  >Product</a
+                >
+                <span
+                  class="bg-[url(./images/icon-arrow-dark.svg)] md:bg-[url(./images/icon-arrow-light.svg)] bg-no-repeat bg-center bg-contain w-3 h-3"
+                ></span>
+              </li>
+              <li class="flex justify-center items-center gap-1">
+                <a
+                  href="#"
+                  class="text-lg hover:text-veryDarkGrayishBlue text-veryDarkDesaturatedBlue md:text-white/80 md:hover:text-white/100 md:hover:underline font-semibold"
+                  >Company</a
+                >
+                <span
+                  class="bg-[url(./images/icon-arrow-dark.svg)] md:bg-[url(./images/icon-arrow-light.svg)] bg-no-repeat bg-center bg-contain w-3 h-3"
+                ></span>
+              </li>
+              <li id="sub-btn" class="w-full relative">
+                <div class="flex justify-center items-center gap-2">
+                  <a
+                    href="#"
+                    class="text-lg text-veryDarkDesaturatedBlue md:text-white/80 md:hover:text-white/100 md:hover:underline hover:text-veryDarkGrayishBlue font-semibold"
+                    >Connect</a
+                  >
+                  <span
+                    id="arrow"
+                    class="transform transition-transform bg-[url(./images/icon-arrow-dark.svg)] md:bg-[url(./images/icon-arrow-light.svg)] bg-no-repeat bg-center bg-contain w-3 h-3"
+                  ></span>
+                </div>
+                <div id="drop-down" class="md:absolute md:w-48 hidden">
+                  <ul
+                    class="rounded-md bg-gray-100 px-8 py-8 mt-4 w-full flex flex-col justify-center items-center md:items-start"
+                  >
+                    <li class="">
+                      <a
+                        href="#"
+                        class="text-md hover:font-bold text-veryDarkGrayishBlue"
+                        >Contact</a
+                      >
+                    </li>
+                    <li class="pt-4">
+                      <a
+                        href="#"
+                        class="text-md text-veryDarkGrayishBlue hover:font-bold"
+                        >Newsletter</a
+                      >
+                    </li>
+                    <li class="pt-4">
+                      <a
+                        href="#"
+                        class="text-md text-veryDarkGrayishBlue hover:font-bold"
+                        >LinkedIn</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+            <div class="h-px md:hidden bg-gray-200 mx-8"></div>
+            <div
+              class="flex flex-col md:flex-row justify-center items-center py-8 md:py-0"
+            >
+              <button
+                class="px-4 text-md transition text-veryDarkDesaturatedBlue hover:text-veryDarkGrayishBlue py-2 md:text-white/80 md:hover:text-white font-semibold"
+              >
+                Login
+              </button>
+              <button
+                class="text-md text-white bg-gradient-to-br from-bgFrom md:from-white md:to-white md:text-lightRed md:hover:from-white/20 md:hover:to-white/20 hover:from-bgFrom/60 md:hover:text-white transition to-bgTo hover: to-bgTo/60 px-4 py-2 rounded-full font-semibold"
+              >
+                SignUp
+              </button>
+            </div>
+          </div>
+        </nav>
+        <!-- nav end -->
+        <!-- hero start-->
+        <div class="hero text-center py-32 md:py-24 px-10 font-overpass">
+          <div>
+            <h1 class="font-semibold text-4xl md:text-6xl">
+              A modern publishing platform
+            </h1>
+            <p class="text-xl font-light py-8">
+              Grow your audience and build your online brand
+            </p>
+          </div>
+          <div class="flex gap-4 justify-center items-center py-4 font-ubuntu">
+            <button
+              class="bg-white transition border hover:border-transparent hover:bg-opacity-20 hover:text-white text-lightRed py-2 px-4 rounded-full font-bold"
+            >
+              Start for Free
+            </button>
+            <button
+              class="text-white border transition hover:bg-white hover:text-lightRed py-2 px-4 rounded-full font-bold"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
+        <!-- hero end -->
+      </div>
+    </header>
+    <section
+      class="w-full text-center md:pb-8 pb-24 flex flex-col items-center md:justify-start mt-24 md:mt-32"
+    >
+      <h1 class="text-4xl font-semibold text-veryDarkDesaturatedBlue">
+        Designed for the future
+      </h1>
+      <div
+        class="flex flex-col md:flex-row-reverse justify-center items-center"
+      >
+        <div class="md:w-1/2 overflow-hidden">
+          <div class="w-full relative">
+            <picture class="">
+              <source
+                media="(min-width: 768px)"
+                srcset="./images/illustration-editor-desktop.svg"
+              />
+              <img
+                src="./images/illustration-editor-mobile.svg"
+                alt=""
+                class="object-cover w-full md:relative md:-top-8 md:-right-32"
+              />
+            </picture>
+          </div>
+        </div>
+        <div
+          class="text-center md:w-1/2 md:text-left md:pl-8 lg:pl-24 px-8 my-16"
+        >
+          <h1 class="text-4xl font-semibold text-veryDarkDesaturatedBlue">
+            Introducing an extensible editor
+          </h1>
+          <p class="text-veryDarkGrayishBlue pt-8">
+            Blogr features an exceedingly intuitive interface which lets you
+            focus on one thing: creating content. The editor supports management
+            of multiple blogs and allows easy manipulation of embeds such as
+            images, videos, and Markdown. Extensibility with plugins and themes
+            provide easy ways to add functionality or change the looks of a
+            blog.
+          </p>
+          <h1 class="text-4xl font-semibold text-veryDarkDesaturatedBlue mt-12">
+            Robust content management
+          </h1>
+          <p class="text-veryDarkGrayishBlue pt-8">
+            Flexible content management enables users to easily move through
+            posts. Increase the usability of your blog by adding customized
+            categories, sections, format, or flow. With this functionality,
+            you’re in full control.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="mt-36 md:mt-0">
+      <div
+        class="section-bg md:flex md:gap-8 justify-start md:justify-center md:items-center items-start w-full text-white"
+      >
+        <div class="md:w-1/2 flex justify-center items-center">
+          <img
+            src="./images/illustration-phones.svg"
+            alt=""
+            class="object-contain relative -top-56 md:-top-16"
+          />
+        </div>
+        <div
+          class="relative -top-44 md:static md:flex md:py-20 text-center md:text-left md:flex-col md:justify-center md:items-start px-8 leading-8 md:w-1/2"
+        >
+          <h1 class="text-4xl font-semibold">
+            State of the Art Infrastructure
+          </h1>
+          <p class="leading-10 pt-8 pb-8">
+            With reliability and speed in mind, worldwide data centers provide
+            the backbone for ultra-fast connectivity. This ensures your site
+            will load instantly, no matter where your readers are, keeping your
+            site competitive.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section
+      class="w-full md:pb-8 pb-24 flex flex-col items-center pt-16 px-8 md:pl-0 md:pr-8"
+    >
+      <div class="flex flex-col md:flex-row justify-center items-center">
+        <div class="py-8 md:w-1/2 mx-auto">
+          <div class="md:-ml-60">
+            <picture class="">
+              <source
+                media="(min-width: 768px)"
+                srcset="./images/illustration-laptop-desktop.svg"
+              />
+              <img
+                src="./images/illustration-laptop-mobile.svg"
+                alt=""
+                class="object-cover"
+              />
+            </picture>
+          </div>
+        </div>
+        <div
+          class="text-center md:w-1/2 md:text-left md:flex md:flex-col md:justify-center md:items-start"
+        >
+          <h1 class="text-4xl font-semibold text-veryDarkDesaturatedBlue">
+            Free, open, simple
+          </h1>
+          <p class="text-veryDarkGrayishBlue pt-8">
+            Blogr is a free and open source application backed by a large
+            community of helpful developers. It supports features such as code
+            syntax highlighting, RSS feeds, social media integration,
+            third-party commenting tools, and works seamlessly with Google
+            Analytics. The architecture is clean and is relatively easy to
+            learn.
+          </p>
+          <h1 class="text-4xl font-semibold text-veryDarkDesaturatedBlue mt-16">
+            Powerful tooling
+          </h1>
+          <p class="text-veryDarkGrayishBlue pt-8">
+            Batteries included. We built a simple and straightforward CLI tool
+            that makes customization and deployment a breeze, but capable of
+            producing even the most complicated sites.
+          </p>
+        </div>
+      </div>
+    </section>
+    <footer
+      class="font-ubuntu py-20 bg-veryDarkBlue w-full rounded-tr-[100px] md:mx-auto"
+    >
+      <div
+        class="text-white flex flex-col justify-center items-center md:flex-row md:justify-evenly md:w-[90%] md:items-start"
+      >
+        <div class="flex justify-center items-center">
+          <img src="./images//logo.svg" alt="" />
+        </div>
+        <div
+          class="mt-8 text-center flex md:mt-0 flex-col justify-center items-center"
+        >
+          <h1 class="font-semibold text-lg">Product</h1>
+          <ul class="mt-8 text-grayishBlue">
+            <li class="pt-3 hover:underline"><a href=""> Overview </a></li>
+            <li class="pt-3 hover:underline"><a href=""> Pricing </a></li>
+            <li class="pt-3 hover:underline"><a href=""> Marketplace </a></li>
+            <li class="pt-3 hover:underline"><a href=""> Features </a></li>
+            <li class="pt-3 hover:underline"><a href=""> Integrations </a></li>
+          </ul>
+        </div>
+        <div
+          class="mt-8 text-center flex md:mt-0 flex-col justify-center items-center"
+        >
+          <h1 class="font-semibold text-lg">Company</h1>
+          <ul class="mt-8 text-grayishBlue">
+            <li class="pt-3 hover:underline"><a href=""> About </a></li>
+            <li class="pt-3 hover:underline"><a href=""> Team </a></li>
+            <li class="pt-3 hover:underline"><a href=""> Blog </a></li>
+            <li class="pt-3 hover:underline"><a href=""> Careers </a></li>
+          </ul>
+        </div>
+        <div
+          class="mt-8 text-center flex md:mt-0 flex-col justify-center items-center"
+        >
+          <h1 class="font-semibold text-lg">Connect</h1>
+          <ul class="mt-8 text-grayishBlue">
+            <li class="pt-3 hover:underline"><a href=""> Contact </a></li>
+            <li class="pt-3 hover:underline"><a href=""> Newsletter </a></li>
+            <li class="pt-3 hover:underline"><a href=""> LinkedIn </a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
