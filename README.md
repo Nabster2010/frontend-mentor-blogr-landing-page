@@ -28,10 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [github repo](https://github.com/Nabster2010/
-  frontend-mentor-blogr-landing-page)
-- Live Site URL: [live site](https://nabster2010.github.io/
-  frontend-mentor-blogr-landing-page/)
+- Solution URL: [github repo](https://github.com/Nabster2010/frontend-mentor-blogr-landing-page)
+- Live Site URL: [live site](https://nabster2010.github.io/frontend-mentor-blogr-landing-page/)
 
 ## My process
 
